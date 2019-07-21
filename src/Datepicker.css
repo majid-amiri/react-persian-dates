@@ -1,0 +1,255 @@
+.datepicker-container {
+  width: 100%;
+  max-width: 370px;
+  margin: auto;
+  background-color: #FFF;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 0 16px; }
+
+/* Days of week row */
+.datepicker-container .daysOfWeek {
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  max-width: 370px;
+  position: fixed;
+  right: 0;
+  left: 0;
+  background-color: #FFF;
+  border-bottom: #E6E6E6 1px solid;
+  padding: 16px 16px 8px;
+  top: 107px;
+  z-index: 1; }
+
+.datepicker-container .daysOfWeek > div {
+  width: 48px;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  font-size: 12px;
+  text-align: center;
+  color: #404040; }
+
+.month-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column; }
+
+/* Heading */
+.month-container .heading {
+  font-weight: bold;
+  margin: 24px 0 8px; }
+
+.month-container .heading .title {
+  font-size: 17px;
+  font-weight: bold; }
+
+.month-container .month {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column; }
+
+.month-container .month .row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  margin: 0; }
+
+/* Day wrapper styles */
+.month-container .dayWrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 48px;
+  height: 48px;
+  text-align: center; }
+
+/* Day wrapper button styles */
+.month-container .dayWrapper button {
+  position: relative;
+  border: none;
+  background: none;
+  outline: none;
+  width: 48px;
+  height: 48px;
+  line-height: 48px;
+  cursor: pointer;
+  font-size: 17px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  white-space: nowrap; }
+
+.month-container .dayWrapper button span.today-text {
+  display: none;
+  font-size: 12px;
+  font-weight: 500;
+  position: absolute;
+  line-height: 1;
+  width: 100%;
+  text-align: center;
+  right: 0;
+  top: -2px; }
+
+.month-container .dayWrapper button.common span.today-text {
+  display: block; }
+
+.month-container .dayWrapper button[disabled] {
+  color: #A3A3A3;
+  cursor: not-allowed;
+  pointer-events: none;
+  text-decoration: unset;
+  position: relative; }
+.month-container .dayWrapper button[disabled]:after {
+  content: '';
+  position: absolute;
+  border-top: 1px solid #E6E6E6;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  width: 20px;
+  height: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto; }
+
+.month-container .dayWrapper button[disabled]:empty:after {
+  display: none; }
+
+.month-container .dayWrapper button.singleDate {
+  background-color: #00d170;
+  color: #FFF;
+  opacity: 1;
+  border-radius: 75px; }
+
+.month-container .dayWrapper button.firstDay {
+  background-color: #00d170;
+  color: #FFF;
+  opacity: 1;
+  border-radius: 0 75px 75px 0; }
+
+.month-container .dayWrapper button.lastDay {
+  background-color: #00d170;
+  color: #FFF;
+  opacity: 1;
+  border-radius: 75px 0 0 75px; }
+
+.month-container .dayWrapper button.inRange {
+  background-color: #00d170;
+  color: #FFF;
+  opacity: 1; }
+
+.month-container .dayWrapper button.today {
+  color: #00d170; }
+
+.month-container .dayWrapper:not(.currentMonth) button {
+  /*opacity: .5;*/ }
+
+/* Selected state of buttons */
+.month-container .selected button,
+.month-container .selected button:hover,
+.month-container .selected button:active,
+.month-container .selected button:focus {
+  background-color: #337ab7;
+  color: #FFF; }
+
+.datepicker-input-container {
+  max-width: 370px;
+  position: fixed;
+  background: #FFF;
+  width: 100%;
+  top: 47px;
+  right: 0;
+  left: 0;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 4px 24px 0;
+  z-index: 1; }
+.datepicker-input-container .datepicker-input {
+  padding: 0 8px 8px;
+  width: 140px;
+  border: 0;
+  margin: 0; }
+.datepicker-input-container .datepicker-input .floating-label {
+  right: 8px; }
+.datepicker-input-container .datepicker-input input {
+  font-weight: bold; }
+.datepicker-input-container .datepicker-input.input-filled .floating-label {
+  color: #404040; }
+
+.modal-content.datepicker .modal-body {
+  padding: 100px 0 0 0; }
+.modal-content.datepicker .modal-body .button-container {
+  position: fixed;
+  bottom: 15%;
+  background-color: #fff;
+  width: 100%;
+  border-top: 1px #e6e6e6 solid; }
+
+@media only screen and (max-width: 350px) {
+  .datepicker-container {
+    max-width: 310px; }
+  /* Days of week row */
+  .datepicker-container .daysOfWeek {
+    max-width: 310px; }
+  .month-container .dayWrapper {
+    width: 40px !important;
+    height: 40px !important; }
+  .month-container .dayWrapper button {
+    width: 40px !important;
+    height: 40px !important; }
+  .datepicker-container .daysOfWeek > div {
+    width: 40px !important; } }
