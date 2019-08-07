@@ -112,6 +112,7 @@ export default class Datepicker extends Component {
               key={`month-${index}`}
               monthTitle={monthTitle}
               onSelect={this.changeSelection}
+              scrollToSelectedDay={this.props.scrollToSelectedDay}
             />
           )
         })}
@@ -132,6 +133,7 @@ Datepicker.defaultProps = {
 
 Datepicker.propTypes = {
   onSelect: PropTypes.func,
+  scrollToSelectedDay: PropTypes.func,
   selectFrom: PropTypes.instanceOf(Date),
   startDate: PropTypes.instanceOf(Date),
   type: PropTypes.string,

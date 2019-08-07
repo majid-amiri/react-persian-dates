@@ -12,7 +12,7 @@ class Month extends PureComponent {
   }
 
   renderMonth(month) {
-    const {onSelect} = this.props
+    const {onSelect, scrollToSelectedDay} = this.props
     return month.map((day, index) =>
       <Day
         disabled={day.disabled}
@@ -21,6 +21,7 @@ class Month extends PureComponent {
         persianDate={day.persianDate}
         key={`${index}`}
         onSelect={onSelect}
+        scrollToSelectedDay={scrollToSelectedDay}
       />
     )
   }
@@ -48,7 +49,8 @@ class Month extends PureComponent {
 Month.propTypes = {
   month: PropTypes.array,
   monthTitle: PropTypes.string,
-  onSelect: PropTypes.func
+  onSelect: PropTypes.func,
+  scrollToSelectedDay: PropTypes.func
 }
 
 export default Month

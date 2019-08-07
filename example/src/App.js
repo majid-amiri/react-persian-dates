@@ -6,7 +6,7 @@ export default class App extends Component {
   render () {
     return (
       <div>
-        <ExampleComponent text='Modern React component module' />
+        <ExampleComponent onSelect={console.log} scrollToSelectedDay={day => setTimeout(() => day.scrollIntoViewIfNeeded(), 1000)}/>
       </div>
     )
   }

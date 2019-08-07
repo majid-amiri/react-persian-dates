@@ -9,7 +9,7 @@ class Day extends PureComponent {
   }
   componentDidMount() {
     if (this.props.status === 'singleDate' || this.props.status === 'firstDay') {
-      setTimeout(() => this.dayRef.scrollIntoView({behavior: 'smooth', block: 'center', inline: 'nearest'}), 500)
+      this.props.scrollToSelectedDay(this.dayRef)
     }
   }
 
@@ -49,6 +49,7 @@ class Day extends PureComponent {
 
 Day.propTypes = {
   disabled: PropTypes.bool,
+  scrollToSelectedDay: PropTypes.func,
   status: PropTypes.string,
   persianDate: PropTypes.array,
   onSelect: PropTypes.func,
@@ -56,6 +57,10 @@ Day.propTypes = {
     PropTypes.string,
     PropTypes.instanceOf(Date)
   ])
+}
+
+Day.defaultProps = {
+  scrollToSelectedDay: () => undefined
 }
 
 export default Day
