@@ -32,7 +32,7 @@ class Example extends Component {
 
 |Props name|Desciption|Values|Default value|
 |--------------------|--------------------|------------------|-----------------|
-|monthsCount|Number of months shown in date picker|(Number)|4
+|monthsCount|Number of months shown in date picker|(Number)|12
 |startDate|The date that calendar use to start generating|(Date)|```new Date()```|
 |selectFrom|The date that is marked when date picker appears|(Date)|```new Date()```|
 |selectTo|The date that is marked as second date (usable in range date picker)|(Date)|null|
