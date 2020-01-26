@@ -186,6 +186,8 @@ function getDates(date, type, startDate) {
         }
       }
       allDates.push(new Date(renderDate))
+      // to avoid wrong Safari’s Daylight Saving Time calculations
+      renderDate.setHours(12, 0, 0, 0)
       renderDate.setDate(renderDate.getDate() + 1)
     }
     return allDates
